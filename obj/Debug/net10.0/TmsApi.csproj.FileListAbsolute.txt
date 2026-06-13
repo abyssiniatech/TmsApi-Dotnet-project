@@ -26,3 +26,15 @@ C:\Users\CSUG\Desktop\TmsApi\TmsApi\obj\Debug\net10.0\refint\TmsApi.dll
 C:\Users\CSUG\Desktop\TmsApi\TmsApi\obj\Debug\net10.0\TmsApi.pdb
 C:\Users\CSUG\Desktop\TmsApi\TmsApi\obj\Debug\net10.0\TmsApi.genruntimeconfig.cache
 C:\Users\CSUG\Desktop\TmsApi\TmsApi\obj\Debug\net10.0\ref\TmsApi.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\obj\Debug\net10.0\TmsApi.sourcelink.json
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\obj\Debug\net10.0\TmsApi.csproj.AssemblyReference.cache
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\obj\Debug\net10.0\TmsApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\bin\Debug\net10.0\Npgsql.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\bin\Debug\net10.0\Scalar.AspNetCore.dll
+C:\Users\CSUG\Desktop\TmsApi\TmsApi\obj\Debug\net10.0\TmsApi.csproj.Up2Date

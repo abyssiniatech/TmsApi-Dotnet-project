@@ -1,40 +1,34 @@
-// using System.Security.Claims;
-// using System.Text.Encodings.Web;
-// using Microsoft.AspNetCore.Authentication;
-// using Microsoft.Extensions.Options;
-// public class TrainingAuthHandler
-// : AuthenticationHandler<AuthenticationSchemeOptions>
-// {
-// public TrainingAuthHandler(
-// IOptionsMonitor<AuthenticationSchemeOptions> options,ILoggerFactory logger,
-// UrlEncoder encoder)
-// : base(options, logger, encoder)
-// {
-// }
-// protected override Task<AuthenticateResult> HandleAuthenticateAsync()
-// {
-// if (!Request.Headers.ContainsKey("X-Training-User"))
-// {
-// return Task.FromResult(
-// AuthenticateResult.Fail("Missing training userheader."));
-// }
-// var claims = new[]
-// {
-// new Claim(ClaimTypes.Name, Request.Headers["X-Training-User"]!)
-// };
-// var identity = new ClaimsIdentity(claims, Scheme.Name);var principal = new ClaimsPrincipal(identity);
-// var ticket = new AuthenticationTicket(principal, Scheme.Name);
-// return Task.FromResult(
-// AuthenticateResult.Success(ticket));
-// }
-// }
+using System.Security.Claims;
+using System.Text.Encodings.Web;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Options;
 
-// .AddScheme<AuthenticationSchemeOptions,
-// TrainingAuthHandler>("Training", null);
-// builder.Services.AddAuthorization();
-// Configure the middleware pipeline:
-// app.UseAuthentication();
-// app.UseAuthorization();
-// Protect the endpoint:
-// app.MapGet(...)
-// .RequireAuthorization();
+public class TrainingAuthHandler : AuthenticationHandler<AuthenticationSchemeOptions>
+{
+    public TrainingAuthHandler(
+        IOptionsMonitor<AuthenticationSchemeOptions> options,
+        ILoggerFactory logger,
+        UrlEncoder encoder) : base(options, logger, encoder)
+    {
+    }
+
+    protected override Task<AuthenticateResult> HandleAuthenticateAsync()
+    {
+        // If the header is missing, fail authentication (results in 401)
+        if (!Request.Headers.ContainsKey("X-Training-User"))
+        {
+            return Task.FromResult(AuthenticateResult.Fail("Missing training user header."));
+        }
+
+        // If the header exists, create a successful authentication ticket
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.Name, Request.Headers["X-Training-User"]!)
+        };
+        var identity = new ClaimsIdentity(claims, Scheme.Name);
+        var principal = new ClaimsPrincipal(identity);
+        var ticket = new AuthenticationTicket(principal, Scheme.Name);
+
+        return Task.FromResult(AuthenticateResult.Success(ticket));
+    }
+}

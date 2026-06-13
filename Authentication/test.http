@@ -1,0 +1,2 @@
+GET http://localhost:5220/api/assessments/results
+X-Training-User: Student-001
